@@ -15,7 +15,6 @@ from gi.repository import GLib, Gst
 # DeepStream Python modules
 # (Adjust the path or imports if your local environment is different)
 sys.path.append('../')
-from common.platform_info import PlatformInfo
 import pyds
 
 def bus_call(bus, message, loop):
@@ -154,7 +153,6 @@ def main(args):
     Gst.init(None)
     # We still use platform_info for demonstration, 
     # though it's no longer used for sink selection:
-    platform_info = PlatformInfo()
 
     # Create Pipeline
     print("Creating Pipeline \n")
@@ -245,7 +243,7 @@ def main(args):
     # Set pgie config file
     pgie.set_property(
         "config-file-path",
-        "/app/deepstream_python_apps/apps/deepstream-test1/dstest1_pgie_config.yml"
+        "/app/deepstream_python_apps/deepstream-test1/dstest1_pgie_config.yml"
     )
 
     print("Adding elements to Pipeline \n")
